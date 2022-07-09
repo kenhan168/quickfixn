@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\QuickFIXn\QuickFix.csproj" />
+    <ProjectReference Include="..\TradeClient\Examples.TradeClient.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Examples.Executor": {
+      "commandName": "Project",
+      "commandLineArgs": "executor_ssl.cfg"
+    }
+  }
+}

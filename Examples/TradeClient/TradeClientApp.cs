@@ -9,6 +9,8 @@ namespace TradeClient
     {
         Session _session = null;
 
+        string ftxLogOnMsg = "8=FIX.4.2|9=162|35=A|49=liETnbkbenTCGe2qFJjsJ0ISfiZdF-fnuJY35BBL|56=FTX|34=1|52=20220708-18:28:43|98=0|108=30|96=1249022cbb5b59fd278d1e897d31bf7743d30e2ce3ad93cb77c17a6692ffb0e5|10=050|";
+
         // This variable is a kludge for developer test purposes.  Don't do this on a production application.
         public IInitiator MyInitiator = null;
 
@@ -19,15 +21,27 @@ namespace TradeClient
             _session = Session.LookupSession(sessionID);
         }
 
-        public void OnLogon(SessionID sessionID) { Console.WriteLine("Logon - " + sessionID.ToString()); }
-        public void OnLogout(SessionID sessionID) { Console.WriteLine("Logout - " + sessionID.ToString()); }
+        public void OnLogon(SessionID sessionID) 
+        { 
+            Console.WriteLine("Logon - " + sessionID.ToString()); 
+        }
+        public void OnLogout(SessionID sessionID) 
+        {
+            Console.WriteLine("Logout - " + sessionID.ToString()); 
+        }
 
-        public void FromAdmin(Message message, SessionID sessionID) { }
-        public void ToAdmin(Message message, SessionID sessionID) { }
+        public void FromAdmin(Message message, SessionID sessionID) 
+        {
+            Console.WriteLine("FromAdmin - " + sessionID.ToString() + " " + message.ToString());
+        }
+        public void ToAdmin(Message message, SessionID sessionID) 
+        {
+            Console.WriteLine("ToAdmin - " + sessionID.ToString() + " " + message.ToString());
+        }
 
         public void FromApp(Message message, SessionID sessionID)
         {
-            Console.WriteLine("IN:  " + message.ToString());
+            Console.WriteLine("FromApp IN:  " + message.ToString());
             try
             {
                 Crack(message, sessionID);
@@ -57,7 +71,7 @@ namespace TradeClient
             { }
 
             Console.WriteLine();
-            Console.WriteLine("OUT: " + message.ToString());
+            Console.WriteLine("ToApp OUT: " + message.ToString());
         }
         #endregion
 
