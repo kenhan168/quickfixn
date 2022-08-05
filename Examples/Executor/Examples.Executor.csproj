@@ -2,14 +2,13 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net6.0</TargetFrameworks>
     <RootNamespace>Executor</RootNamespace>
     <AssemblyName>Executor</AssemblyName>
     <Copyright>Copyright © Connamara Systems, LLC 2011</Copyright>
     <Company>Connamara Systems, LLC</Company>
     <Platforms>AnyCPU;x64</Platforms>
     <IsPackable>false</IsPackable>
-    <TargetFramework>net451</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
