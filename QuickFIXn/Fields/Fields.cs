@@ -7848,6 +7848,131 @@ namespace QuickFix.Fields
 
 
     /// <summary>
+    /// MassCancelRequestType Field
+    /// </summary>/
+    public sealed class MassCancelRequestType : CharField
+    {
+        public const int TAG = 530;
+
+        public MassCancelRequestType()
+            :base(Tags.MassCancelRequestType) {}
+        public MassCancelRequestType(char val)
+            :base(Tags.MassCancelRequestType, val) {}
+
+
+        // Field Enumerations
+        public const char CANCEL_ORDERS_FOR_A_SECURITY = '1';
+        public const char CANCEL_ORDERS_FOR_AN_UNDERLYING_SECURITY = '2';
+        public const char CANCEL_ORDERS_FOR_A_PRODUCT = '3';
+        public const char CANCEL_ORDERS_FOR_A_CFICODE = '4';
+        public const char CANCEL_ORDERS_FOR_A_SECURITYTYPE = '5';
+        public const char CANCEL_ORDERS_FOR_A_TRADING_SESSION = '6';
+        public const char CANCEL_ALL_ORDERS = '7';
+        public const char CANCEL_ORDERS_FOR_A_MARKET = '8';
+        public const char CANCEL_ORDERS_FOR_A_MARKET_SEGMENT = '9';
+        public const char CANCEL_ORDERS_FOR_A_SECURITY_GROUP = 'A';
+        public const char CANCEL_FOR_SECURITY_ISSUER = 'B';
+        public const char CANCEL_FOR_ISSUER_OF_UNDERLYING_SECURITY = 'C';
+    }
+
+
+    /// <summary>
+    /// MassCancelResponse Field
+    /// </summary>/
+    public sealed class MassCancelResponse : CharField
+    {
+        public const int TAG = 531;
+
+        public MassCancelResponse()
+            :base(Tags.MassCancelResponse) {}
+        public MassCancelResponse(char val)
+            :base(Tags.MassCancelResponse, val) {}
+
+
+        // Field Enumerations
+        public const char CANCEL_REQUEST_REJECTED = '0';
+        public const char CANCEL_ORDERS_FOR_A_SECURITY = '1';
+        public const char CANCEL_ORDERS_FOR_AN_UNDERLYING_SECURITY = '2';
+        public const char CANCEL_ORDERS_FOR_A_PRODUCT = '3';
+        public const char CANCEL_ORDERS_FOR_A_CFICODE = '4';
+        public const char CANCEL_ORDERS_FOR_A_SECURITYTYPE = '5';
+        public const char CANCEL_ORDERS_FOR_A_TRADING_SESSION = '6';
+        public const char CANCEL_ALL_ORDERS = '7';
+        public const char CANCEL_ORDERS_FOR_A_MARKET = '8';
+        public const char CANCEL_ORDERS_FOR_A_MARKET_SEGMENT = '9';
+        public const char CANCEL_ORDERS_FOR_A_SECURITY_GROUP = 'A';
+        public const char CANCEL_ORDERS_FOR_A_SECURITIES_ISSUER = 'B';
+        public const char CANCEL_ORDERS_FOR_ISSUER_OF_UNDERLYING_SECURITY = 'C';
+    }
+
+
+    /// <summary>
+    /// MassCancelRejectReason Field
+    /// </summary>/
+    public sealed class MassCancelRejectReason : IntField
+    {
+        public const int TAG = 532;
+
+        public MassCancelRejectReason()
+            :base(Tags.MassCancelRejectReason) {}
+        public MassCancelRejectReason(int val)
+            :base(Tags.MassCancelRejectReason, val) {}
+
+
+        // Field Enumerations
+        public const int MASS_CANCEL_NOT_SUPPORTED = 0;
+        public const int INVALID_OR_UNKNOWN_SECURITY = 1;
+        public const int INVALID_OR_UNKOWN_UNDERLYING_SECURITY = 2;
+        public const int INVALID_OR_UNKNOWN_PRODUCT = 3;
+        public const int INVALID_OR_UNKNOWN_CFICODE = 4;
+        public const int INVALID_OR_UNKNOWN_SECURITYTYPE = 5;
+        public const int INVALID_OR_UNKNOWN_TRADING_SESSION = 6;
+        public const int OTHER = 99;
+        public const int INVALID_OR_UNKNOWN_MARKET = 7;
+        public const int INVALID_OR_UNKOWN_MARKET_SEGMENT = 8;
+        public const int INVALID_OR_UNKNOWN_SECURITY_GROUP = 9;
+        public const int INVALID_OR_UNKNOWN_SECURITY_ISSUER = 10;
+        public const int INVALID_OR_UNKNOWN_ISSUER_OF_UNDERLYING_SECURITY = 11;
+        public const int INVALID_OR_UNKNOWN_UNDERLYING = 2;
+        public const int INVALID_OR_UNKNOWN_SECURITY_TYPE = 5;
+    }
+
+
+    /// <summary>
+    /// AggressorIndicator Field
+    /// </summary>/
+    public sealed class AggressorIndicator : BooleanField
+    {
+        public const int TAG = 1057;
+
+        public AggressorIndicator()
+            :base(Tags.AggressorIndicator) {}
+        public AggressorIndicator(Boolean val)
+            :base(Tags.AggressorIndicator, val) {}
+
+
+        // Field Enumerations
+        public const Boolean YES = true;
+        public const Boolean NO = false;
+    }
+
+
+    /// <summary>
+    /// LegAllocID Field
+    /// </summary>/
+    public sealed class LegAllocID : StringField
+    {
+        public const int TAG = 1366;
+
+        public LegAllocID()
+            :base(Tags.LegAllocID) {}
+        public LegAllocID(string val)
+            :base(Tags.LegAllocID, val) {}
+
+    }
+
+
+    /// <summary>
     /// SecurityIDSource Field
     /// </summary>/
     public sealed class SecurityIDSource : StringField
@@ -10424,97 +10549,6 @@ namespace QuickFix.Fields
         public const string CROSS = "F";
         public const string ACTING_AS_MARKET_MAKER_OF_SPECIALIST_IN_THE_UNDERLYING_SECURITY_OF_A_DERIVATIVE_SEUCIRTY = "6";
         public const string EXTNERAL_INTER_CONNECTED_MARKET_LINKAGE = "9";
-    }
-
-
-    /// <summary>
-    /// MassCancelRequestType Field
-    /// </summary>/
-    public sealed class MassCancelRequestType : CharField
-    {
-        public const int TAG = 530;
-
-        public MassCancelRequestType()
-            :base(Tags.MassCancelRequestType) {}
-        public MassCancelRequestType(char val)
-            :base(Tags.MassCancelRequestType, val) {}
-
-
-        // Field Enumerations
-        public const char CANCEL_ORDERS_FOR_A_SECURITY = '1';
-        public const char CANCEL_ORDERS_FOR_AN_UNDERLYING_SECURITY = '2';
-        public const char CANCEL_ORDERS_FOR_A_PRODUCT = '3';
-        public const char CANCEL_ORDERS_FOR_A_CFICODE = '4';
-        public const char CANCEL_ORDERS_FOR_A_SECURITYTYPE = '5';
-        public const char CANCEL_ORDERS_FOR_A_TRADING_SESSION = '6';
-        public const char CANCEL_ALL_ORDERS = '7';
-        public const char CANCEL_ORDERS_FOR_A_MARKET = '8';
-        public const char CANCEL_ORDERS_FOR_A_MARKET_SEGMENT = '9';
-        public const char CANCEL_ORDERS_FOR_A_SECURITY_GROUP = 'A';
-        public const char CANCEL_FOR_SECURITY_ISSUER = 'B';
-        public const char CANCEL_FOR_ISSUER_OF_UNDERLYING_SECURITY = 'C';
-    }
-
-
-    /// <summary>
-    /// MassCancelResponse Field
-    /// </summary>/
-    public sealed class MassCancelResponse : CharField
-    {
-        public const int TAG = 531;
-
-        public MassCancelResponse()
-            :base(Tags.MassCancelResponse) {}
-        public MassCancelResponse(char val)
-            :base(Tags.MassCancelResponse, val) {}
-
-
-        // Field Enumerations
-        public const char CANCEL_REQUEST_REJECTED = '0';
-        public const char CANCEL_ORDERS_FOR_A_SECURITY = '1';
-        public const char CANCEL_ORDERS_FOR_AN_UNDERLYING_SECURITY = '2';
-        public const char CANCEL_ORDERS_FOR_A_PRODUCT = '3';
-        public const char CANCEL_ORDERS_FOR_A_CFICODE = '4';
-        public const char CANCEL_ORDERS_FOR_A_SECURITYTYPE = '5';
-        public const char CANCEL_ORDERS_FOR_A_TRADING_SESSION = '6';
-        public const char CANCEL_ALL_ORDERS = '7';
-        public const char CANCEL_ORDERS_FOR_A_MARKET = '8';
-        public const char CANCEL_ORDERS_FOR_A_MARKET_SEGMENT = '9';
-        public const char CANCEL_ORDERS_FOR_A_SECURITY_GROUP = 'A';
-        public const char CANCEL_ORDERS_FOR_A_SECURITIES_ISSUER = 'B';
-        public const char CANCEL_ORDERS_FOR_ISSUER_OF_UNDERLYING_SECURITY = 'C';
-    }
-
-
-    /// <summary>
-    /// MassCancelRejectReason Field
-    /// </summary>/
-    public sealed class MassCancelRejectReason : IntField
-    {
-        public const int TAG = 532;
-
-        public MassCancelRejectReason()
-            :base(Tags.MassCancelRejectReason) {}
-        public MassCancelRejectReason(int val)
-            :base(Tags.MassCancelRejectReason, val) {}
-
-
-        // Field Enumerations
-        public const int MASS_CANCEL_NOT_SUPPORTED = 0;
-        public const int INVALID_OR_UNKNOWN_SECURITY = 1;
-        public const int INVALID_OR_UNKOWN_UNDERLYING_SECURITY = 2;
-        public const int INVALID_OR_UNKNOWN_PRODUCT = 3;
-        public const int INVALID_OR_UNKNOWN_CFICODE = 4;
-        public const int INVALID_OR_UNKNOWN_SECURITYTYPE = 5;
-        public const int INVALID_OR_UNKNOWN_TRADING_SESSION = 6;
-        public const int OTHER = 99;
-        public const int INVALID_OR_UNKNOWN_MARKET = 7;
-        public const int INVALID_OR_UNKOWN_MARKET_SEGMENT = 8;
-        public const int INVALID_OR_UNKNOWN_SECURITY_GROUP = 9;
-        public const int INVALID_OR_UNKNOWN_SECURITY_ISSUER = 10;
-        public const int INVALID_OR_UNKNOWN_ISSUER_OF_UNDERLYING_SECURITY = 11;
-        public const int INVALID_OR_UNKNOWN_UNDERLYING = 2;
-        public const int INVALID_OR_UNKNOWN_SECURITY_TYPE = 5;
     }
 
 
@@ -19937,25 +19971,6 @@ namespace QuickFix.Fields
 
 
     /// <summary>
-    /// AggressorIndicator Field
-    /// </summary>/
-    public sealed class AggressorIndicator : BooleanField
-    {
-        public const int TAG = 1057;
-
-        public AggressorIndicator()
-            :base(Tags.AggressorIndicator) {}
-        public AggressorIndicator(Boolean val)
-            :base(Tags.AggressorIndicator, val) {}
-
-
-        // Field Enumerations
-        public const Boolean YES = true;
-        public const Boolean NO = false;
-    }
-
-
-    /// <summary>
     /// NoUndlyInstrumentParties Field
     /// </summary>/
     public sealed class NoUndlyInstrumentParties : IntField
@@ -24806,21 +24821,6 @@ namespace QuickFix.Fields
             :base(Tags.FillQty) {}
         public FillQty(Decimal val)
             :base(Tags.FillQty, val) {}
-
-    }
-
-
-    /// <summary>
-    /// LegAllocID Field
-    /// </summary>/
-    public sealed class LegAllocID : StringField
-    {
-        public const int TAG = 1366;
-
-        public LegAllocID()
-            :base(Tags.LegAllocID) {}
-        public LegAllocID(string val)
-            :base(Tags.LegAllocID, val) {}
 
     }
 

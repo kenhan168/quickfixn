@@ -412,6 +412,11 @@ namespace QuickFix.Fields
         public const int ListStatusText = 444;
         public const int EncodedListStatusTextLen = 445;
         public const int EncodedListStatusText = 446;
+        public const int MassCancelRequestType = 530;
+        public const int MassCancelResponse = 531;
+        public const int MassCancelRejectReason = 532;
+        public const int AggressorIndicator = 1057;
+        public const int LegAllocID = 1366;
         public const int SecurityIDSource = 22;
         public const int IOIQty = 27;
         public const int LastQty = 32;
@@ -544,9 +549,6 @@ namespace QuickFix.Fields
         public const int SecondaryExecID = 527;
         public const int OrderCapacity = 528;
         public const int OrderRestrictions = 529;
-        public const int MassCancelRequestType = 530;
-        public const int MassCancelResponse = 531;
-        public const int MassCancelRejectReason = 532;
         public const int TotalAffectedOrders = 533;
         public const int NoAffectedOrders = 534;
         public const int AffectedOrderID = 535;
@@ -1085,7 +1087,6 @@ namespace QuickFix.Fields
         public const int InstrumentPartySubIDType = 1054;
         public const int PositionCurrency = 1055;
         public const int CalculatedCcyLastQty = 1056;
-        public const int AggressorIndicator = 1057;
         public const int NoUndlyInstrumentParties = 1058;
         public const int UndlyInstrumentPartyID = 1059;
         public const int UndlyInstrumentPartyIDSource = 1060;
@@ -1391,7 +1392,6 @@ namespace QuickFix.Fields
         public const int FillExecID = 1363;
         public const int FillPx = 1364;
         public const int FillQty = 1365;
-        public const int LegAllocID = 1366;
         public const int LegAllocSettlCurrency = 1367;
         public const int TradSesEvent = 1368;
         public const int MassActionReportID = 1369;

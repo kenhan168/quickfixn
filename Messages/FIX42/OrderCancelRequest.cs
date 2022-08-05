@@ -15,15 +15,11 @@ namespace QuickFix
             }
 
             public OrderCancelRequest(
-                    QuickFix.Fields.OrigClOrdID aOrigClOrdID,
-                    QuickFix.Fields.ClOrdID aClOrdID,
                     QuickFix.Fields.Symbol aSymbol,
                     QuickFix.Fields.Side aSide,
                     QuickFix.Fields.TransactTime aTransactTime
                 ) : this()
             {
-                this.OrigClOrdID = aOrigClOrdID;
-                this.ClOrdID = aClOrdID;
                 this.Symbol = aSymbol;
                 this.Side = aSide;
                 this.TransactTime = aTransactTime;

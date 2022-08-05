@@ -15,9 +15,7 @@ namespace QuickFix
             }
 
             public ExecutionReport(
-                    QuickFix.Fields.OrderID aOrderID,
                     QuickFix.Fields.ExecID aExecID,
-                    QuickFix.Fields.ExecTransType aExecTransType,
                     QuickFix.Fields.ExecType aExecType,
                     QuickFix.Fields.OrdStatus aOrdStatus,
                     QuickFix.Fields.Symbol aSymbol,
@@ -27,9 +25,7 @@ namespace QuickFix
                     QuickFix.Fields.AvgPx aAvgPx
                 ) : this()
             {
-                this.OrderID = aOrderID;
                 this.ExecID = aExecID;
-                this.ExecTransType = aExecTransType;
                 this.ExecType = aExecType;
                 this.OrdStatus = aOrdStatus;
                 this.Symbol = aSymbol;
@@ -2890,6 +2886,68 @@ namespace QuickFix
             public bool IsSetMultiLegReportingType() 
             { 
                 return IsSetField(Tags.MultiLegReportingType);
+            }
+            public QuickFix.Fields.AggressorIndicator AggressorIndicator
+            { 
+                get 
+                {
+                    QuickFix.Fields.AggressorIndicator val = new QuickFix.Fields.AggressorIndicator();
+                    GetField(val);
+                    return val;
+                }
+                set { SetField(value); }
+            }
+            
+            public void Set(QuickFix.Fields.AggressorIndicator val) 
+            { 
+                this.AggressorIndicator = val;
+            }
+            
+            public QuickFix.Fields.AggressorIndicator Get(QuickFix.Fields.AggressorIndicator val) 
+            { 
+                GetField(val);
+                return val;
+            }
+            
+            public bool IsSet(QuickFix.Fields.AggressorIndicator val) 
+            { 
+                return IsSetAggressorIndicator();
+            }
+            
+            public bool IsSetAggressorIndicator() 
+            { 
+                return IsSetField(Tags.AggressorIndicator);
+            }
+            public QuickFix.Fields.LegAllocID LegAllocID
+            { 
+                get 
+                {
+                    QuickFix.Fields.LegAllocID val = new QuickFix.Fields.LegAllocID();
+                    GetField(val);
+                    return val;
+                }
+                set { SetField(value); }
+            }
+            
+            public void Set(QuickFix.Fields.LegAllocID val) 
+            { 
+                this.LegAllocID = val;
+            }
+            
+            public QuickFix.Fields.LegAllocID Get(QuickFix.Fields.LegAllocID val) 
+            { 
+                GetField(val);
+                return val;
+            }
+            
+            public bool IsSet(QuickFix.Fields.LegAllocID val) 
+            { 
+                return IsSetLegAllocID();
+            }
+            
+            public bool IsSetLegAllocID() 
+            { 
+                return IsSetField(Tags.LegAllocID);
             }
             public class NoContraBrokersGroup : Group
             {

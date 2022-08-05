@@ -59,6 +59,8 @@ namespace QuickFix
                     case QuickFix.FIX42.OrderCancelRequest.MsgType: return new QuickFix.FIX42.OrderCancelRequest();
                     case QuickFix.FIX42.OrderCancelReject.MsgType: return new QuickFix.FIX42.OrderCancelReject();
                     case QuickFix.FIX42.OrderStatusRequest.MsgType: return new QuickFix.FIX42.OrderStatusRequest();
+                    case QuickFix.FIX42.OrderMassCancelRequest.MsgType: return new QuickFix.FIX42.OrderMassCancelRequest();
+                    case QuickFix.FIX42.OrderMassCancelReport.MsgType: return new QuickFix.FIX42.OrderMassCancelReport();
                     case QuickFix.FIX42.Allocation.MsgType: return new QuickFix.FIX42.Allocation();
                     case QuickFix.FIX42.AllocationACK.MsgType: return new QuickFix.FIX42.AllocationACK();
                     case QuickFix.FIX42.SettlementInstructions.MsgType: return new QuickFix.FIX42.SettlementInstructions();

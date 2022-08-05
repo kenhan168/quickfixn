@@ -168,9 +168,7 @@ namespace Executor
             }
 
             QuickFix.FIX42.ExecutionReport exReport = new QuickFix.FIX42.ExecutionReport(
-                new OrderID(GenOrderID()),
                 new ExecID(GenExecID()),
-                new ExecTransType(ExecTransType.NEW),
                 new ExecType(ExecType.FILL),
                 new OrdStatus(OrdStatus.FILLED),
                 symbol,
@@ -411,8 +409,7 @@ namespace Executor
         public void OnMessage(QuickFix.FIX42.OrderCancelRequest msg, SessionID s)
         {
             string orderid = (msg.IsSetOrderID()) ? msg.OrderID.Obj : "unknown orderID";
-            QuickFix.FIX42.OrderCancelReject ocj = new QuickFix.FIX42.OrderCancelReject(
-                new OrderID(orderid), msg.ClOrdID, msg.OrigClOrdID, new OrdStatus(OrdStatus.REJECTED), new CxlRejResponseTo(CxlRejResponseTo.ORDER_CANCEL_REQUEST));
+            QuickFix.FIX42.OrderCancelReject ocj = new QuickFix.FIX42.OrderCancelReject( new CxlRejResponseTo(CxlRejResponseTo.ORDER_CANCEL_REQUEST));
             ocj.CxlRejReason = new CxlRejReason(CxlRejReason.UNKNOWN_ORDER);
             ocj.Text = new Text("Executor does not support order cancels");
 
@@ -520,8 +517,7 @@ namespace Executor
         public void OnMessage(QuickFix.FIX42.OrderCancelReplaceRequest msg, SessionID s)
         {
             string orderid = (msg.IsSetOrderID()) ? msg.OrderID.Obj : "unknown orderID";
-            QuickFix.FIX42.OrderCancelReject ocj = new QuickFix.FIX42.OrderCancelReject(
-                new OrderID(orderid), msg.ClOrdID, msg.OrigClOrdID, new OrdStatus(OrdStatus.REJECTED), new CxlRejResponseTo(CxlRejResponseTo.ORDER_CANCEL_REPLACE_REQUEST));
+            QuickFix.FIX42.OrderCancelReject ocj = new QuickFix.FIX42.OrderCancelReject(new CxlRejResponseTo(CxlRejResponseTo.ORDER_CANCEL_REPLACE_REQUEST));
             ocj.CxlRejReason = new CxlRejReason(CxlRejReason.UNKNOWN_ORDER);
             ocj.Text = new Text("Executor does not support order cancel/replaces");
 

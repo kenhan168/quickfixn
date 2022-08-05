@@ -919,7 +919,7 @@
       <field name="ClearingAccount" required="N"/>
     </message>
     <message name="ExecutionReport" msgtype="8" msgcat="app">
-      <field name="OrderID" required="Y"/>
+      <field name="OrderID" required="N"/>
       <field name="SecondaryOrderID" required="N"/>
       <field name="ClOrdID" required="N"/>
       <field name="OrigClOrdID" required="N"/>
@@ -933,7 +933,7 @@
       </group>
       <field name="ListID" required="N"/>
       <field name="ExecID" required="Y"/>
-      <field name="ExecTransType" required="Y"/>
+      <field name="ExecTransType" required="N"/>
       <field name="ExecRefID" required="N"/>
       <field name="ExecType" required="Y"/>
       <field name="OrdStatus" required="Y"/>
@@ -1016,6 +1016,8 @@
       <field name="ClearingFirm" required="N"/>
       <field name="ClearingAccount" required="N"/>
       <field name="MultiLegReportingType" required="N"/>
+      <field name='AggressorIndicator' required='N' />
+      <field name='LegAllocID' required='N' />
     </message>
     <message name="DontKnowTrade" msgtype="Q" msgcat="app">
       <field name="OrderID" required="Y"/>
@@ -1127,9 +1129,9 @@
       <field name="ClearingAccount" required="N"/>
     </message>
     <message name="OrderCancelRequest" msgtype="F" msgcat="app">
-      <field name="OrigClOrdID" required="Y"/>
+      <field name="OrigClOrdID" required="N"/>
       <field name="OrderID" required="N"/>
-      <field name="ClOrdID" required="Y"/>
+      <field name="ClOrdID" required="N"/>
       <field name="ListID" required="N"/>
       <field name="Account" required="N"/>
       <field name="ClientID" required="N"/>
@@ -1164,11 +1166,11 @@
       <field name="EncodedText" required="N"/>
     </message>
     <message name="OrderCancelReject" msgtype="9" msgcat="app">
-      <field name="OrderID" required="Y"/>
+      <field name="OrderID" required="N"/>
       <field name="SecondaryOrderID" required="N"/>
-      <field name="ClOrdID" required="Y"/>
-      <field name="OrigClOrdID" required="Y"/>
-      <field name="OrdStatus" required="Y"/>
+      <field name="ClOrdID" required="N"/>
+      <field name="OrigClOrdID" required="N"/>
+      <field name="OrdStatus" required="N"/>
       <field name="ClientID" required="N"/>
       <field name="ExecBroker" required="N"/>
       <field name="ListID" required="N"/>
@@ -1183,6 +1185,7 @@
     <message name="OrderStatusRequest" msgtype="H" msgcat="app">
       <field name="OrderID" required="N"/>
       <field name="ClOrdID" required="Y"/>
+      <field name="OrigClOrdID" required="N"/>
       <field name="ClientID" required="N"/>
       <field name="Account" required="N"/>
       <field name="ExecBroker" required="N"/>
@@ -1206,6 +1209,17 @@
       <field name="EncodedSecurityDescLen" required="N"/>
       <field name="EncodedSecurityDesc" required="N"/>
       <field name="Side" required="Y"/>
+    </message>
+    <message name="OrderMassCancelRequest" msgtype="q" msgcat="app">
+      <field name="MassCancelRequestType" required="Y" />
+      <field name="ClOrdID" required="N" />
+      <field name="Symbol" required="N"/>
+    </message>
+    <message name="OrderMassCancelReport" msgtype="r" msgcat="app">
+      <field name="MassCancelRequestType" required="Y" />
+      <field name="ClOrdID" required="N" />
+      <field name="MassCancelResponse" required="Y" />
+      <field name="MassCancelRejectReason" required="N" />      
     </message>
     <message name="Allocation" msgtype="J" msgcat="app">
       <field name="AllocID" required="Y"/>
@@ -2044,6 +2058,7 @@
       <value enum="C" description="EXPIRED"/>
       <value enum="D" description="RESTATED"/>
       <value enum="E" description="PENDING_REPLACE"/>
+      <value enum="I" description="ORDER_STATUS"/>
     </field>
     <field number="151" name="LeavesQty" type="QTY"/>
     <field number="152" name="CashOrderQty" type="QTY"/>
@@ -2618,6 +2633,21 @@
     <field number="443" name="StrikeTime" type="UTCTIMESTAMP"/>
     <field number="444" name="ListStatusText" type="STRING"/>
     <field number="445" name="EncodedListStatusTextLen" type="INT"/>
-    <field number="446" name="EncodedListStatusText" type="DATA"/>
+    <field number="446" name="EncodedListStatusText" type="DATA"/>    
+    <field number="530" name="MassCancelRequestType" type="CHAR">
+      <value enum="1" description="CANCEL_ORDERS_FOR_A_SECURITY" />
+      <value enum="7" description="CANCEL_ALL_ORDERS" />
+    </field>
+    <field number="531" name="MassCancelResponse" type="CHAR">
+      <value enum="0" description="CANCEL_REQUEST_REJECTED" />
+      <value enum="1" description="CANCEL_ORDERS_FOR_A_SECURITY" />
+      <value enum="7" description="CANCEL_ALL_ORDERS" />
+    </field>
+    <field number="532" name="MassCancelRejectReason" type="CHAR" />    
+    <field number='1057' name='AggressorIndicator' type='BOOLEAN'>
+      <value enum='Y' description='YES' />
+      <value enum='N' description='NO' />
+    </field>
+    <field number='1366' name='LegAllocID' type='STRING' />
   </fields>
 </fix>
